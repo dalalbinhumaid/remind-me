@@ -19,44 +19,39 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
-    // data is passed into the constructor
     public TaskAdapter(Context context, List<Task> task) {
         this.mInflater = LayoutInflater.from(context);
         this.mTask = task;
     }
 
-    // inflates the row layout from xml when needed
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.task_list, parent, false);
         return new ViewHolder(view);
     }
 
-    // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         String task = mTask.get(position).getTitle();
         Boolean checked = mTask.get(position).isChecked();
 
-        if(mTask.get(position).getImportance() == 0)
+        if (mTask.get(position).getImportance() == 0)
             holder.myImageView.setImageResource(R.drawable.ic_high_star);
-        if(mTask.get(position).getImportance() == 1)
+        if (mTask.get(position).getImportance() == 1)
             holder.myImageView.setImageResource(R.drawable.ic_mid_star);
-        if(mTask.get(position).getImportance() == 2)
+        if (mTask.get(position).getImportance() == 2)
             holder.myImageView.setImageResource(R.drawable.ic_low_star);
 
         holder.myTextView.setText(task);
         holder.myCheckBox.setChecked(checked);
     }
 
-    // total number of rows
     @Override
     public int getItemCount() {
         return mTask.size();
     }
 
 
-    // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView myTextView;
         CheckBox myCheckBox;
@@ -78,17 +73,14 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         }
     }
 
-    // convenience method for getting data at click position
     public String getItem(int id) {
         return mTask.get(id).getTime();
     }
 
-    // allows clicks events to be caught
     public void setClickListener(ItemClickListener itemClickListener) {
         this.mClickListener = itemClickListener;
     }
 
-    // parent activity will implement this method to respond to click events
     public interface ItemClickListener {
         void onItemClick(View view, int position);
     }

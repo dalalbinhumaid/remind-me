@@ -3,11 +3,14 @@ package com.example.remindme;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +21,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String CHANNEL_1_ID = "channel1";
+    public static final String CHANNEL_2_ID = "channel2";
 
     TaskAdapter adapter;
     ArrayList<Task> tasks;
@@ -82,6 +88,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void setOnChannel1(View v){
+        String title = "AAAAAAAAA";
+        String msg = "AAAAAAAAAA";
+
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)
+                .setSmallIcon(R.drawable.ic_remindme)
+                .setContentTitle(title).setContentText(msg)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+        NotificationManager notificationManager = getSystemService(NotificationManager.class);
+        notificationManager.notify(1,notification);
+    }
 }
 
 

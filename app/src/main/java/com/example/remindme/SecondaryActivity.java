@@ -30,12 +30,13 @@ public class SecondaryActivity extends AppCompatActivity {
     TextView dateText, timeText;
     ImageView dateButton, timeButton;
     int importance;
-    String title, time,date;
+    String title, time, date;
 
+    //current date and time information
     final Calendar cal = Calendar.getInstance();
-    int year = cal.get(Calendar.YEAR);
-    int month = cal.get(Calendar.MONTH);
-    int day = cal.get(Calendar.DAY_OF_MONTH);
+    int YEAR = cal.get(Calendar.YEAR);
+    int MONTH = cal.get(Calendar.MONTH);
+    int DAY = cal.get(Calendar.DAY_OF_MONTH);
     int HOUR = cal.get(Calendar.HOUR);
     int MINUTE = cal.get(Calendar.MINUTE);
 
@@ -46,6 +47,7 @@ public class SecondaryActivity extends AppCompatActivity {
 
         dateText = findViewById(R.id.dateTextView);
         dateButton = findViewById(R.id.calendar);
+
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,22 +57,21 @@ public class SecondaryActivity extends AppCompatActivity {
 
         timeText = findViewById(R.id.timeTextView);
         timeButton = findViewById(R.id.time);
+
         timeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            setTime();
+                setTime();
             }
         });
 
-        RadioGroup radioGroup= (RadioGroup) findViewById(R.id.radioGroup);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId)
-            {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case -1:
-                        System.out.println ("Choices cleared!");
+                        System.out.println("Choices cleared!");
                         break;
                     case R.id.radioBtnHigh:
                         importance = 0;
@@ -79,14 +80,15 @@ public class SecondaryActivity extends AppCompatActivity {
                         importance = 1;
                         break;
                     case R.id.radioBtnLow:
-                       importance =2;
+                        importance = 2;
                         break;
                     default:
-                        System.out.println ("??????????");
+                        System.out.println("??????????");
                         break;
                 }
             }
         });
+
         Button button = findViewById(R.id.addTaskButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,29 +111,35 @@ public class SecondaryActivity extends AppCompatActivity {
         DatePickerDialog datePickerDialog = new DatePickerDialog(SecondaryActivity.this, R.style.Theme_RemindMe, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                dateText.setText(day + "-" + (month + 1) + "-" + year);
-                date = day + "-" + (month + 1) + "-" + year;
+                Calendar dateCal = Calendar.getInstance();
+                dateCal.set(cal.YEAR, year);
+                dateCal.set(cal.MONTH, month);
+                dateCal.set(cal.DAY_OF_MONTH, dayOfMonth);
+
+                date = DateFormat.format("MMM d, yyyy", dateCal).toString();
+
+                dateText.setText(date);
+
             }
-        }, year, month, day);
+        }, YEAR, MONTH, DAY);
 
         datePickerDialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
         datePickerDialog.getWindow().setGravity(Gravity.CENTER);
         datePickerDialog.show();
     }
 
-    void setTime(){
-        TimePickerDialog timePickerDialog = new TimePickerDialog(
-                SecondaryActivity.this, R.style.Theme_RemindMe, new TimePickerDialog.OnTimeSetListener() {
+    void setTime() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(SecondaryActivity.this, R.style.Theme_RemindMe, new TimePickerDialog.OnTimeSetListener() {
             public void onTimeSet(TimePicker timePicker, int hour, int minute) {
-                Log.i("MainActivity", "onTimeSet: " + hour + minute);
-                Calendar calendar1 = Calendar.getInstance();
-                calendar1.set(Calendar.HOUR, hour);
-                calendar1.set(Calendar.MINUTE, minute);
-                String dateText = DateFormat.format("h:mm a", calendar1).toString();
-                timeText.setText(dateText);
-                time = dateText;
+                Calendar timeCal = Calendar.getInstance();
+                timeCal.set(Calendar.HOUR, hour);
+                timeCal.set(Calendar.MINUTE, minute);
+
+                time = DateFormat.format("h:mm a", timeCal).toString();
+                timeText.setText(time);
             }
         }, HOUR, MINUTE, true);
+
         timePickerDialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
         timePickerDialog.getWindow().setGravity(Gravity.CENTER);
         timePickerDialog.show();
