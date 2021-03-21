@@ -83,7 +83,6 @@ public class SecondaryActivity extends AppCompatActivity {
                         importance = 2;
                         break;
                     default:
-                        System.out.println("??????????");
                         break;
                 }
             }

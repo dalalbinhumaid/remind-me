@@ -20,13 +20,13 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     private ItemClickListener mClickListener;
 
     public TaskAdapter(Context context, List<Task> task) {
-        this.mInflater = LayoutInflater.from(context);
+        this.mInflater = LayoutInflater.from(context); // Inflate the adapter
         this.mTask = task;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.task_list, parent, false);
+        View view = mInflater.inflate(R.layout.task_list, parent, false); // Inflate the ViewHolder
         return new ViewHolder(view);
     }
 
@@ -35,6 +35,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         String task = mTask.get(position).getTitle();
         Boolean checked = mTask.get(position).isChecked();
 
+        // The stars appear based on the importance level
         if (mTask.get(position).getImportance() == 0)
             holder.myImageView.setImageResource(R.drawable.ic_high_star);
         if (mTask.get(position).getImportance() == 1)
@@ -50,7 +51,6 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     public int getItemCount() {
         return mTask.size();
     }
-
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView myTextView;
