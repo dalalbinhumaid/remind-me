@@ -24,9 +24,30 @@
         app:iconTint="@color/purple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.823"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.921"
+        app:layout_constraintVertical_bias="0.895"
+        app:strokeColor="@color/purple"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/CancelButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:padding="15dp"
+        android:text="Cancel"
+        android:textSize="20dp"
+        app:cornerRadius="30dp"
+        app:iconTint="#F44336"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.895"
         app:strokeColor="@color/purple"
         app:strokeWidth="1dp" />
 
@@ -136,7 +157,7 @@
         android:paddingVertical="10dp"
         android:textAlignment="center"
         android:textStyle="bold"
-        android:textColor="@color/white"
+        android:textColor="@color/purple"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/taskTitleInput"
         app:layout_constraintEnd_toEndOf="parent"
@@ -161,15 +182,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="High"
-            android:textSize="18sp"
-            android:fontFamily="@font/roboto"
-            android:textColor="@color/lightBlue" />
-
-        <RadioButton
-            android:id="@+id/radioBtnMid"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Medium"
             android:textSize="18sp"
             android:fontFamily="@font/roboto"
             android:textColor="@color/lightBlue" />
