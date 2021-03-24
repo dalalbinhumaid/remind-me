@@ -21,7 +21,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         String title = intent.getStringExtra("title");
         int impo = intent.getIntExtra("importance",0);
         //call SecondaryActivity when notification is tapped
-        Intent mainIntent= new Intent(context, SecondaryActivity.class);
+        Intent mainIntent= new Intent(context, task_deatils.class);
         PendingIntent contentIntent= PendingIntent.getActivity(
                 context, 0,mainIntent,0
         );
