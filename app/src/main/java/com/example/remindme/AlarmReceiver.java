@@ -19,7 +19,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         //get id & title of the alarm
         int notificationId= intent.getIntExtra("notificationId",0);
         String title = intent.getStringExtra("title");
-        int impo= intent.getIntExtra("importance",0);
+        int impo = intent.getIntExtra("importance",0);
         //call SecondaryActivity when notification is tapped
         Intent mainIntent= new Intent(context, SecondaryActivity.class);
         PendingIntent contentIntent= PendingIntent.getActivity(
@@ -53,7 +53,7 @@ switch(impo){
 
         // prepare notification
         NotificationCompat.Builder builder=new NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(android.R.drawable.ic_dialog_info)
+                .setSmallIcon(android.R.drawable.ic_popup_reminder)
                 .setContentTitle(Reminder_title)
                 .setContentText(title)
                 .setContentIntent(contentIntent)

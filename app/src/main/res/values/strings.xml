@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">RemindMe</string>
-    <string name="tasks"> Tasks</string>
+    <string name="tasks"> All Tasks</string>
 </resources>

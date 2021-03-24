@@ -13,134 +13,128 @@
 
     <Button
         android:id="@+id/addTaskButton"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="wrap_content"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto"
+        android:fontFamily="@font/open_sans_semibold"
         android:padding="15dp"
         android:text="Add Task"
-        android:textSize="20dp"
+        android:textSize="22dp"
         app:cornerRadius="30dp"
         app:iconTint="@color/purple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.823"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.895"
+        app:layout_constraintVertical_bias="0.656"
         app:strokeColor="@color/purple"
         app:strokeWidth="1dp" />
 
     <Button
         android:id="@+id/CancelButton"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto"
+        android:fontFamily="@font/open_sans_semibold"
         android:padding="15dp"
         android:text="Cancel"
-        android:textSize="20dp"
+        android:textSize="22dp"
         app:cornerRadius="30dp"
         app:iconTint="#F44336"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.895"
+        app:layout_constraintTop_toBottomOf="@+id/addTaskButton"
+        app:layout_constraintVertical_bias="0.345"
         app:strokeColor="@color/purple"
         app:strokeWidth="1dp" />
 
     <TextView
-        android:id="@+id/timeTextView"
-        android:layout_width="145dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="20dp"
-        android:ems="12"
-        android:fontFamily="@font/roboto"
-        android:hint="Choose time"
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:ems="5"
+        android:fontFamily="@font/open_sans_light"
+        android:hint="Choose date"
         android:textColor="@color/white"
-        android:textColorHint="@color/lightBlue"
+        android:textColorHint="@color/lightGrey"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.296"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
-
-    <ImageView
-        android:id="@+id/calendar"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toEndOf="@+id/dateTextView"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:srcCompat="@drawable/ic_calendar" />
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toEndOf="@+id/calendar"
+        app:layout_constraintTop_toBottomOf="@+id/taskTitleInput" />
 
     <ImageView
         android:id="@+id/time"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toEndOf="@+id/timeTextView"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.582"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calendar"
         app:srcCompat="@drawable/ic_time" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="36dp"
-        android:fontFamily="@font/roboto"
-        android:text="Choose time and date:"
-        android:textColor="@color/white"
-        android:textSize="20dp"
+    <ImageView
+        android:id="@+id/calendar"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.582"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taskTitleInput" />
+        app:layout_constraintTop_toBottomOf="@+id/taskTitleInput"
+        app:srcCompat="@drawable/ic_calendar" />
 
     <TextView
-        android:id="@+id/dateTextView"
-        android:layout_width="145dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="20dp"
-        android:ems="12"
-        android:fontFamily="@font/roboto"
-        android:hint="Choose date"
+        android:id="@+id/timeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="5"
+        android:fontFamily="@font/open_sans_light"
+        android:hint="Choose time"
         android:textColor="@color/white"
-        android:textColorHint="@color/lightBlue"
+        android:textColorHint="@color/lightGrey"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.296"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toEndOf="@+id/time"
+        app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
 
     <EditText
         android:id="@+id/taskTitleInput"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="5dp"
         android:ems="12"
-        android:fontFamily="@font/roboto"
+        android:fontFamily="@font/open_sans_light"
         android:hint="Enter task"
         android:inputType="textPersonName"
         android:textColor="@color/white"
-        android:textColorHint="@color/lightBlue"
+        android:textColorHint="@color/lightGrey"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="300dp"
-        android:background="@color/grey"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:text="Task Title"
+        android:textColor="@color/white"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.025"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -150,14 +144,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
         android:background="@drawable/rounded_corner"
-        android:fontFamily="@font/roboto"
+        android:fontFamily="@font/open_sans_semibold"
         android:paddingTop="150dp"
         android:paddingBottom="0dp"
         android:text="Add a Task"
         android:paddingVertical="10dp"
         android:textAlignment="center"
-        android:textStyle="bold"
-        android:textColor="@color/purple"
+        android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/taskTitleInput"
         app:layout_constraintEnd_toEndOf="parent"
@@ -170,58 +163,45 @@
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="15dp">
 
         <RadioButton
             android:id="@+id/radioBtnHigh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
             android:text="High"
-            android:textSize="18sp"
-            android:fontFamily="@font/roboto"
-            android:textColor="@color/lightBlue" />
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/radioBtnLow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
             android:text="Low"
-            android:textSize="18sp"
-            android:fontFamily="@font/roboto"
-            android:textColor="@color/lightBlue" />
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
     </RadioGroup>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/roboto"
-        android:text="Enter task title:"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/roboto"
-        android:text="Choose task importance:"
+        android:text="Importance"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+        app:layout_constraintTop_toBottomOf="@+id/taskTitleInput" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
