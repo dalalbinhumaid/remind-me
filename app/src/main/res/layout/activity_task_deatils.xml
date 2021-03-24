@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity"
+    >
+
+    <TextView
+        android:id="@+id/tasksText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:fontFamily="@font/open_sans_semibold"
+        android:paddingVertical="10dp"
+        android:text="Task Deatils"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_light"
+            android:textSize="30sp"
+            android:text="Task Title :"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/taskTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="40sp"
+            android:text="Test lablabla"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="20dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_light"
+            android:textSize="30sp"
+            android:text="imortance :"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_marginTop="220dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="30sp"
+            android:text="High"
+            android:textAlignment="center"
+            android:textColor="@color/orange"
+            android:layout_marginTop="220dp"
+            android:layout_marginLeft="30dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_light"
+            android:textSize="30sp"
+            android:text="Date :"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_marginTop="320dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="30sp"
+            android:text="23/4/2020"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_marginTop="320dp"
+            android:layout_marginLeft="30dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_light"
+            android:textSize="30sp"
+            android:text="Time :"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_marginTop="420dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/taskTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="30sp"
+            android:text="7:30pm"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_marginTop="420dp"
+            android:layout_marginLeft="30dp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
