@@ -22,10 +22,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    // public static final String CHANNEL_1_ID = "channel1";
-    // public static final String CHANNEL_2_ID = "channel2";
-
     TaskAdapter adapter;
     ArrayList<Task> tasks;
 
@@ -93,10 +89,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
-    /*
-     * IMPLEMENT THE NOTIFICATION CHANNELS HERE
-     */
+    
 }
 
 

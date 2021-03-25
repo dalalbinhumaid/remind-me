@@ -13,56 +13,48 @@ import android.os.Build;
 import androidx.core.app.NotificationCompat;
 
 public class AlarmReceiver extends BroadcastReceiver {
-    private static final String CHANNEL_ID="ch1";
+    private static final String CHANNEL_ID = "ch1";
+
     @Override
     public void onReceive(Context context, Intent intent) {
 
         //get id & title of the alarm
-        int notificationId= intent.getIntExtra("notificationId",0);
+        int notificationId = intent.getIntExtra("notificationId", 0);
         String title = intent.getStringExtra("title");
-        int impo = intent.getIntExtra("importance",0);
+        int impo = intent.getIntExtra("importance", 0);
         //call SecondaryActivity when notification is tapped
-        Intent mainIntent= new Intent(context, task_deatils.class);
-        PendingIntent contentIntent= PendingIntent.getActivity(
-                context, 0,mainIntent,0
+        Intent mainIntent = new Intent(context, ShowTaskDetails.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(
+                context, 0, mainIntent, 0
         );
 
-//        Intent notifyIntent = new Intent(context, task_deatils.class);
-//// Set the Activity to start in a new, empty task
-////        notifyIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-////                | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//// Create the PendingIntent
-//        PendingIntent notifyPendingIntent = PendingIntent.getActivity(
-//                context, 0, notifyIntent, PendingIntent.FLAG_ONE_SHOT
-//        );
-
-        NotificationManager notificationManager=
+        NotificationManager notificationManager =
                 (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        int importance=0;
-        int c=Color.GRAY;
-        String Reminder_title="Reminder";
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+        int importance = 0;
+        int c = Color.GRAY;
+        String Reminder_title = "Reminder";
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             // for API 26 AND ABOVE
             CharSequence channel_name = "My Notification";
-switch(impo){
-    case 0:
-        importance = NotificationManager.IMPORTANCE_HIGH;
-        c= Color.RED;
-        Reminder_title="High Importance Reminder!!";
-        break;
-    case 2:
-        importance = NotificationManager.IMPORTANCE_LOW;
-        c= Color.YELLOW;
-        Reminder_title="Low Importance Reminder";
-        break;
+            switch (impo) {
+                case 0:
+                    importance = NotificationManager.IMPORTANCE_HIGH;
+                    c = Color.RED;
+                    Reminder_title = "High Importance Reminder!!";
+                    break;
+                case 2:
+                    importance = NotificationManager.IMPORTANCE_LOW;
+                    c = Color.YELLOW;
+                    Reminder_title = "Low Importance Reminder";
+                    break;
 
-}
-            NotificationChannel channel= new NotificationChannel(CHANNEL_ID,channel_name, importance);
+            }
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, channel_name, importance);
             notificationManager.createNotificationChannel(channel);
         }
 
         // prepare notification
-        NotificationCompat.Builder builder=new NotificationCompat.Builder(context, CHANNEL_ID)
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(android.R.drawable.ic_popup_reminder)
                 .setContentTitle(Reminder_title)
                 .setContentText(title)
@@ -71,8 +63,7 @@ switch(impo){
                 .setColor(c)
                 .setAutoCancel(true);
 
-
-                //notify
+        //notify
         notificationManager.notify(notificationId, builder.build());
 
     }
