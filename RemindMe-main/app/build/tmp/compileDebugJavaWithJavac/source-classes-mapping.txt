@@ -1,0 +1,28 @@
+com/example/remindme/MainActivity.java
+ com.example.remindme.MainActivity
+ com.example.remindme.MainActivity$1
+ com.example.remindme.MainActivity$2
+com/example/remindme/Task.java
+ com.example.remindme.Task
+com/example/remindme/Notification.java
+ com.example.remindme.Notification
+com/example/remindme/TaskAdapter.java
+ com.example.remindme.TaskAdapter
+ com.example.remindme.TaskAdapter$ItemClickListener
+ com.example.remindme.TaskAdapter$ViewHolder
+com/example/remindme/AlarmReceiver.java
+ com.example.remindme.AlarmReceiver
+com/example/remindme/BuildConfig.java
+ com.example.remindme.BuildConfig
+com/example/remindme/LauncherActivity.java
+ com.example.remindme.LauncherActivity
+ com.example.remindme.LauncherActivity$1
+com/example/remindme/SecondaryActivity.java
+ com.example.remindme.SecondaryActivity
+ com.example.remindme.SecondaryActivity$1
+ com.example.remindme.SecondaryActivity$2
+ com.example.remindme.SecondaryActivity$3
+ com.example.remindme.SecondaryActivity$4
+ com.example.remindme.SecondaryActivity$5
+ com.example.remindme.SecondaryActivity$6
+ com.example.remindme.SecondaryActivity$7
