@@ -13,8 +13,13 @@
 
     <Button
         android:id="@+id/addTaskButton"
+<<<<<<< Updated upstream
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
+=======
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="350dp"
+>>>>>>> Stashed changes
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto"
         android:padding="15dp"
@@ -24,9 +29,36 @@
         app:iconTint="@color/purple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< Updated upstream
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.921"
+=======
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.662"
+        app:strokeColor="@color/purple"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/CancelButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_semibold"
+        android:padding="15dp"
+        android:text="Cancel"
+        android:textSize="22dp"
+        app:cornerRadius="30dp"
+        app:iconTint="#F44336"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addTaskButton"
+        app:layout_constraintVertical_bias="0.148"
+>>>>>>> Stashed changes
         app:strokeColor="@color/purple"
         app:strokeWidth="1dp" />
 
